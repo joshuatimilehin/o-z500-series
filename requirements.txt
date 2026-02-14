@@ -1,0 +1,34 @@
+﻿# Polymarket BTC Predictor - Required Python Packages
+
+# Data Collection
+ccxt==4.2.25
+requests==2.32.3
+feedparser==6.0.11
+
+# Data Processing
+pandas==2.1.4
+numpy==1.26.3
+python-dateutil==2.8.2
+pytz==2023.3.post1
+
+# Technical Analysis
+ta==0.11.0
+
+# Machine Learning
+xgboost==2.0.3
+scikit-learn==1.4.0
+joblib==1.3.2
+
+# Sentiment
+vaderSentiment==3.3.2
+
+# Cloud persistence
+google-cloud-storage==2.19.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.1
+
+# Optional (heavier sentiment model for future)
+# transformers==4.48.0
+# torch==2.6.0

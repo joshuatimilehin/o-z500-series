@@ -1,0 +1,32 @@
+﻿services:
+  - type: worker
+    name: polybot-worker
+    runtime: docker
+    plan: starter
+    region: ohio
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: python render_orchestrator.py
+    envVars:
+      - key: POLYBOT_PERSIST_ROOT
+        value: /app/runtime
+      - key: ARB_INTERVAL_SEC
+        value: "120"
+      - key: WINDOW_INTERVAL_SEC
+        value: "900"
+      - key: PHASE3_INTERVAL_SEC
+        value: "0"
+      - key: ARB_MIN_GROSS_EDGE
+        value: "0.005"
+      - key: ARB_MIN_LIQUIDITY
+        value: "1000"
+      - key: WINDOW_FALLBACK_MODE
+        value: auto
+      - key: WINDOW_FALLBACK_MIN_ROWS
+        value: "120"
+      - key: CRYPTOPANIC_API_KEY
+        sync: false
+    disk:
+      name: polybot-state
+      mountPath: /app/runtime
+      sizeGB: 10

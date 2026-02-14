@@ -1,0 +1,18 @@
+﻿.git
+.gitignore
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.DS_Store
+
+# Runtime artifacts
+data/
+models/
+results/
+
+# Editor artifacts
+.vscode/
+.idea/
